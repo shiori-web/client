@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign in</h5><hr />
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          <form {{action 'login' on='submit'}} class="form">
+            <div class="form-group">
+              <label for="username">Username</label>
+              {{input id='username' type='text' placeholder='Username or Email'
+                class='form-control' name='username' value=username}}
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              {{input id='password' type='password' placeholder='Password'
+                class='form-control' name='password' value=password}}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sing in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'client',
+    modulePrefix: 'shiori',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -29,6 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.baseApiUrl = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -41,10 +42,13 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV.APP.baseApiUrl = 'http://localhost:3000';
   }
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.APP.baseApiUrl = 'http://shiori.com/api';
   }
 
   return ENV;
