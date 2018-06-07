@@ -1,1 +1,10 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro.ttf") format("truetype");
+}
+
+$body-bg: #f9f9f9;
 $font-size-base: 0.875rem;
+$font-family-base: "Source Sans Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$grid-gutter-width: 10px;

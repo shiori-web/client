@@ -1,0 +1,22 @@
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+
+  .search {
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    &:hover, &.active {
+      border-color: #ccc;
+    }
+
+    .form-control, .btn {
+      border: none;
+      border-radius: none;
+      background: transparent;
+    }
+    .form-control {
+      padding-right: 0;
+    }
+  }
+}

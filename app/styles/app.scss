@@ -1,6 +1,12 @@
 @import "variables";
 @import "ember-bootstrap/bootstrap";
 
+@import "common/header";
+
+body {
+  padding-top: 60px;
+}
+
 input, button,
 textarea, select,
 .btn, .form-control {

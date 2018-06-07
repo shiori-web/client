@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-center">{{t 'signup'}}</h4><hr />
+          <form {{action 'signup' on='submit'}} class="form">
+            <div class="form-group">
+              <label for="name">{{t 'user.name'}}</label>
+              {{input id='name' type='text' placeholder=(t 'user.name')
+                class='form-control' name='name' value=name}}
+            </div>
+
+            <div class="form-group">
+              <label for="username">{{t 'user.username'}}</label>
+              {{input id='username' type='text' placeholder=(t 'user.username')
+                class='form-control' name='username' value=username}}
+            </div>
+
+            <div class="form-group">
+              <label for="email">{{t 'user.email'}}</label>
+              {{input id='email' type='email' placeholder=(t 'user.email')
+                class='form-control' name='email' value=email}}
+            </div>
+
+            <div class="form-group">
+              <label for="password">{{t 'user.password'}}</label>
+              {{input id='password' type='password' placeholder=(t 'user.password')
+                class='form-control' name='password' value=password}}
+            </div>
+
+            <button type="submit" class="btn btn-primary float-right">{{t 'signin'}}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
