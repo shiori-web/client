@@ -3,7 +3,7 @@ import Component from '@ember/component';
 
 export default Component.extend({
   isActive: false,
-  session: inject('session'),
+  session: inject(),
 
   actions: {
     toggleActive() {
@@ -11,7 +11,7 @@ export default Component.extend({
     },
 
     signout() {
-      this.get('signout')();
+      this.get('session').invalidate();
     }
   }
 });

@@ -1,6 +1,6 @@
 <nav class="header navbar navbar-expand-lg fixed-top navbar-light bg-red">
   <div class="container">
-    <a href="#" class="navbar-brand">Shiori</a>
+    {{#link-to 'home' class='navbar-brand'}}Shiori{{/link-to}}
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -22,11 +22,11 @@
           <li class="nav-item">
             {{#bs-dropdown as |dd|}}
               {{#dd.toggle class='nav-link'}}
-                {{user.name}} <span class="caret"></span>
+                {{session.user.name}} <span class="caret"></span>
               {{/dd.toggle}}
               {{#dd.menu align='right' as |mn|}}
                 {{#mn.item}}
-                  {{#mn.link-to 'no-auth.signin'}}{{t 'settings'}}{{/mn.link-to}}
+                  {{#mn.link-to 'signin'}}{{t 'settings'}}{{/mn.link-to}}
                 {{/mn.item}}
                 {{mn.divider}}
                 {{#mn.item}}
@@ -39,10 +39,10 @@
       {{else}}
         <ul class="navbar-nav float-right">
           <li class="nav-item">
-            {{#link-to 'no-auth.signin' class='nav-link'}}{{t 'signin'}}{{/link-to}}
+            {{#link-to 'signin' class='nav-link'}}{{t 'signin'}}{{/link-to}}
           </li>
           <li class="nav-item">
-            {{#link-to 'no-auth.signup' class='nav-link'}}{{t 'signup'}}{{/link-to}}
+            {{#link-to 'signup' class='nav-link'}}{{t 'signup'}}{{/link-to}}
           </li>
         </ul>
       {{/if}}

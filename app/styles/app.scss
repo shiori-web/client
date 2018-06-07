@@ -15,3 +15,7 @@ textarea, select,
     box-shadow: none;
   }
 }
+
+.form-control + .invalid-feedback {
+  display: block;
+}
