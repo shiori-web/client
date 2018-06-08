@@ -6,19 +6,11 @@ export default Controller.extend({
 
   actions: {
     signin() {
-      let { username, password } = this.getProperties('username', 'password');
+      let { username, password } = this.get('model');
       this.get('session').authenticate(username, password).catch(() => {
         this.set('error', this.get('i18n').t('errors.invalid_credentials'));
-        this.set('password', '');
+        this.set('model.password', '');
       });
     }
-  },
-
-  clearState() {
-    this.setProperties({
-      'username': null,
-      'password': null,
-      'error': null
-    });
   }
 });

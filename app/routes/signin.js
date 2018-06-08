@@ -4,9 +4,10 @@ import  UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated
 export default Route.extend(UnauthenticatedRouteMixin, {
   routeIfAlreadyAuthenticated: 'home',
 
-  resetController(controller, isExiting, transition) {
-    if (isExiting) {
-      controller.clearState();
+  model() {
+    return {
+      username: null,
+      password: null
     }
   }
 });
