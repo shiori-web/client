@@ -39,13 +39,16 @@
       {{else}}
         <ul class="navbar-nav float-right">
           <li class="nav-item">
-            {{#link-to 'signin' class='nav-link'}}{{t 'signin'}}{{/link-to}}
+            <a href="#" class="nav-link" {{action 'openSigninModal'}}>{{t 'signin'}}</a>
           </li>
           <li class="nav-item">
-            {{#link-to 'signup' class='nav-link'}}{{t 'signup'}}{{/link-to}}
+            <a href="#" class="nav-link" {{action 'openSignupModal'}}>{{t 'signup'}}</a>
           </li>
         </ul>
       {{/if}}
     </div>
   </div>
 </nav>
+
+{{sign-in isOpen=isSigninModalOpen}}
+{{sign-up isOpen=isSignupModalOpen}}

@@ -1,0 +1,51 @@
+{{#if isOpen}}
+  {{#bs-modal class='signup' onHidden=(action 'closeModal') as |modal|}}
+    {{#modal.header closeButton=false}}
+      <h4 class="modal-title text-center">{{t 'signup'}}</h4>
+    {{/modal.header}}
+
+    {{#modal.body}}
+      <form {{action (perform signup) on='submit'}} class="form">
+        <div class="form-group">
+          {{input id='name' placeholder=(t 'user.name')
+            class='form-control' name='name' value=model.name}}
+
+          {{#each model.errors.name as |error|}}
+            <div class="invalid-feedback">{{error.message}}</div>
+          {{/each}}
+
+          {{input id='username' placeholder=(t 'user.username')
+            class='form-control' name='username' value=model.username}}
+
+          {{#each model.errors.username as |error|}}
+            <div class="invalid-feedback">{{error.message}}</div>
+          {{/each}}
+
+          {{input id='email' type='email' placeholder=(t 'user.email')
+            class='form-control' name='email' value=model.email}}
+
+          {{#each model.errors.email as |error|}}
+            <div class="invalid-feedback">{{error.message}}</div>
+          {{/each}}
+
+          {{input id='password' type='password' placeholder=(t 'user.password')
+            class='form-control' name='password' value=model.password}}
+
+          {{#each model.errors.password as |error|}}
+            <div class="invalid-feedback">{{error.message}}</div>
+          {{/each}}
+        </div>
+
+        <button type="submit" class="btn btn-primary form-control"
+          disabled={{if (or (is-empty model.username) (is-empty model.name)
+          (is-empty model.password) (is-empty model.email)) 'disabled'}}>
+          {{#if loading}}
+            {{fa-icon 'spinner' class='fa-w-16 fa-lg' spin=true}}
+          {{else}}
+            {{t 'signup'}}
+          {{/if}}
+        </button>
+      </form>
+    {{/modal.body}}
+  {{/bs-modal}}
+{{/if}}

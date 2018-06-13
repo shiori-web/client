@@ -1,0 +1,30 @@
+{{#if isOpen}}
+  {{#bs-modal class='signin' onHidden=(action 'closeModal') as |modal|}}
+    {{#modal.header closeButton=false}}
+      <h4 class="modal-title text-center">{{t 'signin'}}</h4>
+    {{/modal.header}}
+
+    {{#modal.body}}
+      {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+      {{/if}}
+      <form {{action (perform signin) on='submit'}} class="form">
+        <div class="form-group">
+          {{input id='username' type='text' placeholder=(t 'user.username')
+            class='form-control' name='username' autocomplete='off' value=username}}
+          {{input id='password' type='password' placeholder='Password'
+            class='form-control' name='password' value=password}}
+        </div>
+
+        <button type="submit" class="btn btn-primary form-control"
+          disabled={{if (or (is-empty username) (is-empty password)) 'disabled'}}>
+          {{#if loading}}
+            {{fa-icon 'spinner' class='fa-w-16 fa-lg' spin=true}}
+          {{else}}
+            {{t 'signin'}}
+          {{/if}}
+        </button>
+      </form>
+    {{/modal.body}}
+  {{/bs-modal}}
+{{/if}}

@@ -19,3 +19,58 @@ textarea, select,
 .form-control + .invalid-feedback {
   display: block;
 }
+
+.signin, .signup {
+  .modal-header {
+    border-bottom: none;
+  }
+  .modal-title {
+    margin: 0 auto;
+  }
+  .btn {
+    padding: 10px 15px;
+  }
+  input.form-control {
+    border-radius: 0;
+    padding: 10px 15px;
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+    &:not(:last-child) {
+      margin-bottom: -1px;
+    }
+    &:last-child {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+}
+
+.ember-notify-default.ember-notify-cn {
+  top: 60px;
+  z-index: 1200;
+}
+
+.alert {
+  &-danger {
+    color: #fff;
+    background-color: #FF8181;
+    border: 1px solid #e25353 !important;
+  }
+  &-warning {
+    color: #826200;
+    background-color: #FFEAA8;
+    border: 1px solid #FFC237 !important;
+  }
+  &-success {
+    color: darkgreen;
+    background-color: #BCF5BC;
+    border: 1px solid #7cdd77 !important;
+  }
+  &-info {
+    color: #fff;
+    background-color: #78C5E7;
+    border: 1px solid #3badd6 !important;
+  }
+}

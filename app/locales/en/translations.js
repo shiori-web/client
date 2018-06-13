@@ -11,6 +11,11 @@ export default {
     'username': 'Username',
   },
 
+  'success': {
+    'welcome_back': 'Welcome back, {{name}}!',
+    'signup': 'Successfully create an account!'
+  },
+
   'errors': {
     'invalid_credentials': 'Woop! Not so fast!'
   }

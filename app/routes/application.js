@@ -1,8 +1,9 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import { inject } from '@ember/service';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
 export default Route.extend(ApplicationRouteMixin, {
+  notify: inject(),
   routeAfterAuthentication: 'home',
 
   beforeModel() {
@@ -12,7 +13,11 @@ export default Route.extend(ApplicationRouteMixin, {
   },
 
   sessionAuthenticated() {
-    this._getCurrentUser();
+    this._getCurrentUser().then(() => {
+      this.get('notify').success(
+        this.get('i18n').t('success.welcome_back', {name: this.get('session.user.name')})
+      );
+    });
     this._super(...arguments);
   },
 
