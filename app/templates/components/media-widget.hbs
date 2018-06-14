@@ -1,0 +1,22 @@
+{{#if media.length}}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="media-card__head">
+        <h5>{{title}}</h5>
+      </div>
+      <div class="media-card__container">
+        {{#each media as |medium| }}
+          <a class="media-card" href="#">
+            <div class="media-card__body">
+              {{lazy-image src=medium.smallCoverUrl class='media-card__image'}}
+              <div class="media-card__image__overlay"></div>
+            </div>
+            <div>
+              <h6 class="media-card__title text-center">{{medium.title}}</h6>
+            </div>
+          </a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/if}}

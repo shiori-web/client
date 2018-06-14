@@ -11,6 +11,11 @@ export default {
     'username': 'Username',
   },
 
+  'widget': {
+    'seasonal': 'Seasonal Anime',
+    'ongoing': 'Ongoing Anime'
+  },
+
   'success': {
     'welcome_back': 'Welcome back, {{name}}!',
     'signup': 'Successfully create an account!'

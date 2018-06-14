@@ -1,17 +1,7 @@
-<div class="row context">
-  <div class="col-md-12">
-    <div class="media-card__container">
-      {{#each animes as |anime| }}
-        <div class="media-card">
-          <div class="media-card__body">
-            <img class="media-card__image" src="{{anime.smallCoverUrl}}" alt="{{anime.title}}">
-          </div>
-          <div class="media-card__head">
-            <h6 class="media-card__title">{{anime.title}}</h6>
-          </div>
-        </div>
-      {{/each}}
-    </div>
+<div class="row">
+  <div class="col-md-8">
+    {{media-widget media=model.seasonal title=(t 'widget.seasonal')}}
+
+    {{media-widget media=model.ongoing title=(t 'widget.ongoing')}}
   </div>
 </div>
-
