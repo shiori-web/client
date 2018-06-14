@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    tty: true
+    stdin_open: true
+    build: .
+    command: ember serve --live-reload-port 35730
+    entrypoint: /shiori/entrypoint.sh
+    volumes:
+      - .:/shiori
+    ports:
+      - 4200:4200
+      - 35730:35730
